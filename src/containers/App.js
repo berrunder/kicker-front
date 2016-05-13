@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import ScoreList from '../components/ScoreList';
+import Totals from '../components/Totals';
 
 export class App extends Component {
     constructor(props) {
@@ -10,13 +11,15 @@ export class App extends Component {
     render() {
         return <div className="row">
             <ScoreList scores={this.props.scores}/>
+            <Totals scores={this.props.totals} />
         </div>;
     }
 }
 
 function mapStateToProps(state) {
     return {
-        scores: state.get('scores')
+        scores: state.get('scores'),
+        totals: state.get('totals')
     };
 }
 
