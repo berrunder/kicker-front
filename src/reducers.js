@@ -42,9 +42,11 @@ const rootReducer = (state = defaultState, action) => {
             console.log('Reducer test message');
             return state;
         case SCORES_LOADED:
+        {
             const scores = fromJS(action.scores);
             return state.set('scores', scores)
                 .set('totals', calculateTotals(scores));
+        }
     }
 
     return state;
