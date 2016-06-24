@@ -4,7 +4,7 @@ import {Map} from 'immutable';
 
 const ScoreItem = (props) => {
     return <div>
-        <div className="item-header">{props.team1.get('Name')} - {props.team2.get('Name')}</div>
+        <div className="item-header">{props.team1.get('name')} - {props.team2.get('name')}</div>
         <div className="item-scores">{props.score1} - {props.score2}</div>
     </div>;
 };

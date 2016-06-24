@@ -12,25 +12,25 @@ export const defaultState = Map({
 function calculateTotals(scores) {
     let totalsMap = Map();
     scores.forEach((score) => {
-        const id1 = score.getIn(['Team1', 'ID']);
+        const id1 = score.getIn(['Team1', 'id']);
         if (!totalsMap.has(id1)) {
             totalsMap = totalsMap.set(id1, Map({
                 id: id1,
-                name: score.getIn(['Team1', 'Name']),
+                name: score.getIn(['Team1', 'name']),
                 score: 0
             }));
         }
-        totalsMap = totalsMap.setIn([id1, 'score'], totalsMap.getIn([id1, 'score']) + score.get('Score1'));
+        totalsMap = totalsMap.setIn([id1, 'score'], totalsMap.getIn([id1, 'score']) + score.get('score1'));
 
-        const id2 = score.getIn(['Team2', 'ID']);
+        const id2 = score.getIn(['Team2', 'id']);
         if (!totalsMap.has(id2)) {
             totalsMap = totalsMap.set(id2, Map({
                 id: id2,
-                name: score.getIn(['Team2', 'Name']),
+                name: score.getIn(['Team2', 'name']),
                 score: 0
             }));
         }
-        totalsMap = totalsMap.setIn([id2, 'score'], totalsMap.getIn([id2, 'score']) + score.get('Score2'));
+        totalsMap = totalsMap.setIn([id2, 'score'], totalsMap.getIn([id2, 'score']) + score.get('score2'));
     });
 
     return List(totalsMap.values());

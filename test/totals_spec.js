@@ -5,18 +5,18 @@ import {fromJS} from 'immutable';
 import Totals from '../src/components/Totals';
 
 describe('Totals component', () => {
-    const team1 = {ID: 1, Name: 'Колмаков, Черкашин'};
-    const team2 = {ID: 2, Name: 'Сальников, Ткаченко'};
+    const team1 = {id: 1, name: 'Колмаков, Черкашин'};
+    const team2 = {id: 2, name: 'Сальников, Ткаченко'};
 
     const scores = [
         {
-            id: team1.ID,
-            name: team1.Name,
+            id: team1.id,
+            name: team1.name,
             score: 5
         },
         {
-            id: team2.ID,
-            name: team2.Name,
+            id: team2.id,
+            name: team2.name,
             score: 4
         }
     ];
